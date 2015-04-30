@@ -1,0 +1,15 @@
+{
+  "name": "mark-me-down",
+  "version": "0.0.1",
+  "description": "Parses markdown into objects that can be stored or rendered",
+  "license": "MIT",
+  "author": {
+    "name": "Brandon Eum",
+    "email": "brandon@lover.ly"
+  },
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loverly/mark-me-down"
+  }
+}
