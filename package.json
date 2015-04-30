@@ -11,5 +11,11 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/loverly/mark-me-down"
+  },
+  "dependencies": {
+    "lexerific": "0.0.5"
+  },
+  "devDependencies": {
+    "marked": "^0.3.3"
   }
 }
