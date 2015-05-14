@@ -13,7 +13,7 @@
     "url": "https://github.com/loverly/mark-me-down"
   },
   "dependencies": {
-    "lexerific": "0.0.5"
+    "lexerific": "0.0.6"
   },
   "devDependencies": {
     "marked": "^0.3.3"

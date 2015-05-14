@@ -14,5 +14,5 @@ mmd.on('data', function (data) {
   console.log('TOKEN:', data);
 });
 
-var stream = fs.createReadStream(__dirname + '/Corpus.md');
+var stream = fs.createReadStream(__dirname + '/ShortCorpus.md');
 stream.pipe(mmd.getStreamForPipe());

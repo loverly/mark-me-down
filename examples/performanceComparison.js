@@ -9,15 +9,25 @@ var fs = require('fs');
 var MarkMeDown = require('../index');
 var startTime = new Date();
 var marked = require('marked');
+var runTimes = [];
 
 
 function parseFileWithMmd(count) {
   process.stdout.write('.');
+  var runStart = new Date();
 
   if (count > 20) {
     process.stdout.write('\n');
     var time = (Date.now() - startTime.getTime()) / 1000;
-    console.log('Completed in ' + time + ' secs');
+    var sum = runTimes.reduce(function (previousValue, currentValue) {
+      return previousValue + currentValue;
+    }, 0);
+    console.log(
+      'Completed in ' + time + ' secs ' +
+      'with an average of: ' + sum / runTimes.length + ' secs'
+    );
+
+    runTimes = [];
     startTime = new Date();
     parseFileWithMarked(0);
     return;
@@ -25,6 +35,7 @@ function parseFileWithMmd(count) {
 
   var mmd = new MarkMeDown();
   mmd.on('finish', function () {
+    runTimes.push((Date.now() - runStart.getTime()) / 1000);
     count++;
     parseFileWithMmd(count);
   });
@@ -36,11 +47,18 @@ function parseFileWithMmd(count) {
 
 function parseFileWithMarked(count) {
   process.stdout.write('.');
+  var runStart = new Date();
 
   if (count > 20) {
     process.stdout.write('\n');
     var time = (Date.now() - startTime.getTime()) / 1000;
-    console.log('Completed in ' + time + ' secs');
+    var sum = runTimes.reduce(function (previousValue, currentValue) {
+      return previousValue + currentValue;
+    }, 0);
+    console.log(
+      'Completed in ' + time + ' secs ' +
+      'with an average of: ' + sum / runTimes.length + ' secs'
+    );
     return;
   }
 
@@ -50,6 +68,7 @@ function parseFileWithMarked(count) {
   // Using async version of marked
   marked(markdownString);
 
+  runTimes.push((Date.now() - runStart.getTime()) / 1000);
   count++;
   parseFileWithMarked(count);
 }
