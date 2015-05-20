@@ -34,3 +34,6 @@ Or how about a * in line?
 > is a good idea
 > with_ some text
 
+
+![my image](http://some_cool_domain.com/fonwoeite.jpg)
+
