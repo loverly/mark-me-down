@@ -26,6 +26,12 @@ The syntax is a heavily redacted subset of the actual Markdown language with
 Loverly-specific objects introduced for the editorial team to create flexible
 and beautiful blog content.
 
+**THIS IS NOT AN HTML GENERATOR**  
+
+If you are looking for something to generate HTML from a Markdown file, try
+the npm library [marked](https://www.npmjs.com/package/marked) instead.
+
+
 # Usage
 
 There currently isn't much (any) configuration options for the parser.  In the

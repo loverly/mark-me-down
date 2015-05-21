@@ -63,7 +63,16 @@ Where the lexer just understands `__` to be an indicator of emphasized text, eit
 opening or closing.  The lexer makes no claims on whether or not the text provided
 is syntactically correct, which is the job of the parser.
 
-The list of tokens that the lexer understands can be found in [lib/Tokens.js](/lib/Tokens.js).
+The lexer actually works in multiple passes (5 to be exact).  The first step is
+to discriminate between special characters from regular text and transform those
+special characters into tokens.  After that, each level is a higher level of aggregation
+moving from individual characters, to inline elements, to lines, then to blocks
+or paragraphs.
+
+The successive lexing makes identifying special sequences at different levels
+easier to manage.  It will also be very effective at processing content when the
+input source is streaming (as in an HTTP / AJAX request, or from a file server
+elsewhere).
 
 
 ## The Parser
@@ -72,6 +81,19 @@ The parser is tasked with performing __syntactic analysis__ to ensure that the
 text provided follows the rules (formal grammar) and can be constructed into the
 defined language constructs.
 
-As each token type is encountered, the parser will act as a finite state machine
-and try to complete 
+Because of the modifications we've done to the markdown syntax, there are really
+no invalid or disallowed character sequences.  In the case of partial or invalid
+matches the characters are simply reverted to text.  This means that our "parser"
+stage doesn't actually do anything.  Right now it's just a pass-through transformer.
 
+If we update our dialect to have stricter requirements about what is allowed or
+disallowed, we would add those rules into the parser.
+
+
+## The Formatter
+
+The formatter takes the natural lexer output (`token` and `attributeValue` keys)
+and maps it to more semantically meaningful keys and structures.
+
+See the [object type reference](/docs/object-type-reference.md) for more
+details.

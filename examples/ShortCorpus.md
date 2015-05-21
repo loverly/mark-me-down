@@ -39,3 +39,4 @@ Or how about a * in line?
 
 {{script: async defer src="http://google.com/some_js__with__chars.js"}}
 
+Or how about a [link](http://lover.ly)?
