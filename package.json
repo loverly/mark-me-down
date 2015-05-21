@@ -1,5 +1,5 @@
 {
-  "name": "@loverly/mark-me-down",
+  "name": "mark-me-down",
   "private": true,
   "version": "0.0.1",
   "description": "Parses markdown into objects that can be stored or rendered",
