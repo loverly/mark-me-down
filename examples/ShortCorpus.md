@@ -9,7 +9,7 @@ And some text with __strong__ feeling
 
 what about some `code`
 
-What about <html> tags?
+What about <html> tags? # or stuff in line
 
 Or how about a * in line?
 
