@@ -1,3 +1,14 @@
+# Disclaimer
+
+**HIGHLY EXPERIMENTAL: USE AT YOUR OWN RISK**
+
+Currently suffers from:
+
+* Does not support full markdown language features
+* Performance (50x slower than `marked`)
+* Outputs only objects (no HTML renderer, formatter)
+
+
 # Mark Me Down
 
 A utility to parse a modified markdown dialect into an object representation 
