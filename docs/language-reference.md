@@ -23,6 +23,7 @@ to include Loverly-specific tags.
   * [Lists](#lists)
   * [Code Blocks](#code-blocks)
   * [Scripts](#scripts)
+  * [Raw HTML](#raw-html)
 
 
 # Main Differences Between Loverly Markdown and Standard Markdown
@@ -203,3 +204,11 @@ These can be added via:
 
 Basically everything that comes after the `:` is what goes into the script
 tag attributes as-is.
+
+
+### Raw HTML
+
+Raw HTML should be surrounded by `%%%` fencing.  This is not standard within
+the Markdown syntax (HTML can be embedded inline) but I think stricter rules
+make it easier to identify where raw HTML is being used to validate whether the
+HTML used is acceptable or not.
