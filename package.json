@@ -1,6 +1,6 @@
 {
   "name": "mark-me-down",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Parses markdown into objects that can be stored or rendered",
   "license": "MIT",
   "author": {
